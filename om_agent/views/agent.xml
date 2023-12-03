@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="patient_view_kanban" model="ir.ui.view">
+        <field name="name">om.agent.view.kanban</field>
+        <field name="model">om.agent</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="agent_name"/>
+                <field name="agent_location"/>
+                <field name="agent_dcs"/>
+            </kanban>
+        </field>
+    </record>
+
+
+    <record id="agent_tree" model="ir.ui.view">
+        <field name="name">om.agent.view.tree</field>
+        <field name="model">om.agent</field>
+        <field name="arch" type="xml">
+            <tree expand="1">
+                <field name="agent_name"/>
+                <field name="agent_location"/>
+                <field name="agent_dcs"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="agent_form" model="ir.ui.view">
+        <field name="name">om.agent.view</field>
+        <field name="model">om.agent</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+
+                        <group>
+                            <field name="agent_nid_img"/>
+                            <field name="agent_name"/>
+                            <field name="agent_location"/>
+                            <field name="agent_dcs"/>
+                        </group>
+
+                    </sheet>
+
+            </form>
+        </field>
+    </record>
+
+
+
+
+    <record id="action_om_agent" model="ir.actions.act_window">
+        <field name="name">agent_information</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">om.agent</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type ="html">
+              <p class="o_view_nocontent_smiling_face">
+                hello
+              </p>
+        </field>
+     </record>
+
+
+
+      <menuitem
+            id="menu_om_agent"
+            name="agent"
+
+      />
+        <menuitem
+            id="menu_sub_om_agent"
+            name="Agent"
+            parent="menu_om_agent"
+            action="action_om_agent"
+       />
+
+</odoo>
