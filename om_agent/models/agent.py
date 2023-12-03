@@ -1,7 +1,7 @@
 from odoo import fields, models, api
 
 
-class AccountMove(models.Model):
+class OmAgent(models.Model):
     _name = "om.agent"
     _description = "Om Agent"
 
